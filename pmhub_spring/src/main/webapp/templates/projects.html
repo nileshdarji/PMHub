@@ -1,0 +1,35 @@
+		<div>
+			<table class="table">
+				<thread>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Action</th>
+					</tr>
+					<tr>
+						<td><input class="form-control id-input"></td>
+						<td><input class="form-control name-input"></td>
+						<td><input class="form-control description-input"></td>
+						<td><button class="btn btn-primary add-project">Add</button></td>
+					</tr>
+				</thread>
+				<tbody class="project-list">
+				</tbody>
+			</table>
+		</div>
+		
+        <script type="text/template" class="projects-list-template">
+			<td><span class="id"><%= id %></span></td>
+			<td><span class="name"><%= name %></span></td>
+			<td><span class="description"><%= description %></span></td>
+			<td>
+				<button class="btn btn-warning edit-project">Edit</button>
+				<button class="btn btn-danger delete-project"> Delete</button>
+				<button class="btn btn-success update-project" style="display:none"> update</button>
+				<button class="btn btn-danger cancel" style="display:none"> Cancel</button>
+			</td>
+		</script>    		
+		
+        <script type="text/javascript" src="../js/project.js"></script>    
+

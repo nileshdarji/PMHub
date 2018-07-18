@@ -1,0 +1,5 @@
+package com.pmhub.dao;
+
+public class Task {
+
+}

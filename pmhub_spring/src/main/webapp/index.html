@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PM-HUB</title>
+<!--		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="lib/bootstrap.css" >
+	</head>
+	<body>
+	
+		<!-- NAV BAR START. IT Should be moved to different file  -->	
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		  <a class="navbar-brand" href="#">PM-HUB</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Link</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link disabled" href="#">Disabled</a>
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+				<div class="dropdown-menu" aria-labelledby="dropdown01">
+				  <a class="dropdown-item" href="#projects">Projects</a>
+				  <a class="dropdown-item" href="#team">Team</a>
+				  <a class="dropdown-item" href="#tasks">Tasks</a>
+				</div>
+			  </li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+			  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+			  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		  </div>
+		</nav>	
+		<!-- NAV BAR END -->
+		
+		<BR/>
+		<BR/>
+		<BR/>
+		
+		<h1 id="headerContainer">Text Will change here</h1>
+		
+		<div id = "bodyContainer"></div>
+		<br/>
+		<div id = "newTaskDiv"></div>		
+		<br/>
+		<div id = "taskList"></div>
+		
+		
+        <script type="text/template" id="projects-list-header">
+			<table class="table">
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Action</th>
+				</tr>
+		
+				<tbody id="projectListContainer"></tbody>
+			</table>	
+		</script>    		
+
+        <script type="text/template" id="projects-list-template">
+				<td><span class="id"><%= id %></span></td>
+				<td><span class="name"><%= name %></span></td>
+				<td><span class="description"><%= description %></span></td>
+				<td>
+					<button class="btn btn-warning edit-project">Edit</button>
+					<button class="btn btn-danger delete-project"> Delete</button>
+					<button class="btn btn-success update-project" style="display:none"> update</button>
+					<button class="btn btn-danger cancel" style="display:none"> Cancel</button>
+				</td>
+		</script>    		
+
+		
+        <script type="text/template" id="taskTemplate">
+			<TD><%= name %></TD> 
+			<TD><button class="btn btn-warning edit">Edit</button> <button class="btn btn-danger delete"> Delete</button></TD>
+		</script> 
+   		
+        <script type="text/template" id="addTaskTemplate">
+			<form id="addTask" action="">
+				<input id="newTask" type="text" placeholder="Your new task">
+				<input type="submit" value="Add Task">
+			</form>
+		</script>    		
+		
+		
+        <script src="lib/jquery.js"></script>
+		<script src="lib/bootstrap.js" ></script>
+        <script src="lib/underscore.js"></script>    
+        <script src="lib/backbone.js"></script>
+        <script src="lib/require.js"></script>
+		
+        <script src="models/project.js"></script>
+        <script src="models/task.js"></script>
+		
+        <script src="views/projectView.js"></script>
+        <script src="views/taskView.js"></script>
+        <script src="js/app.js"></script>
+
+	</body>
+</html>

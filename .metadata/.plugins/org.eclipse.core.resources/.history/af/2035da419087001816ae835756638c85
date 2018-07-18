@@ -1,0 +1,5 @@
+package com.pmhub.security;
+
+public class SecurityConfiguration {
+
+}
