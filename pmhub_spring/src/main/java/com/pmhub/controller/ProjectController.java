@@ -9,6 +9,8 @@ import org.hibernate.Query;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +25,8 @@ import com.pmhub.dao.Project;
 @RequestMapping("/api")
 public class ProjectController {
 
+    final Logger logger = LoggerFactory.getLogger(ProjectController.class);
+	
 	// Get all projects
 	@RequestMapping(value = "/projects/", method = RequestMethod.GET)
 	public List<Project> getAllProjects(@AuthenticationPrincipal final UserDetails userDetails) {
@@ -34,7 +38,8 @@ public class ProjectController {
         @SuppressWarnings("unchecked")
         List<Project> projects = session.createQuery("FROM Project").list();
         session.close();
-        System.out.println("Found " + projects.size() + " Projects");
+        
+        logger.info("Logger: Found {} projects", projects.size());        
         return projects;
 		
 	}

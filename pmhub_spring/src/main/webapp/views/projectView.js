@@ -1,4 +1,4 @@
-var vent = _.extend({}, Backbone.Events);
+//var vent = _.extend({}, Backbone.Events);
 
 // Backbone View for one project
 var ProjectView = Backbone.View.extend({
@@ -13,7 +13,7 @@ var ProjectView = Backbone.View.extend({
 	},
 	
 	events: {
-		'click': 'showAlert',
+		//'click': 'showAlert',
 		'click .edit-project': 'edit',
 		'click .update-project': 'update',
 		'click .cancel': 'cancel',
@@ -23,7 +23,9 @@ var ProjectView = Backbone.View.extend({
 	showAlert: function(){
 		alert("Clicked somewhere");
 	},
+	
 	edit: function() {
+		alert("Edit Clicked");
 		this.$('.edit-project').hide();
 		this.$('.delete-project').hide();
 		this.$('.update-project').show();
@@ -70,7 +72,7 @@ var ProjectListView = Backbone.View.extend({
 	
 	initialize: function() {
 		console.log('In Initialize function of ProjectListView');
-		vent.on('projects:show', this.show, this);
+		//vent.on('projects:show', this.show, this);
 	},
 
 	events: {
@@ -81,18 +83,25 @@ var ProjectListView = Backbone.View.extend({
 		alert("Clicked somewhere");
 	},
 	
+	addOneProject: function(project) {
+		var projView = new ProjectView({model: project});
+		this.$el.append(projView.render().el);
+	},
+	
 	render: function() {
 		console.log('In render function of ProjectListView');
 
 		console.log(this.el);
-		
+		this.collection.each(this.addOneProject, this);
+
+/*		
 		var self = this;
 		this.collection.each(function(proj){
 			var projView = new ProjectView({model: proj});
 			console.log(projView.el);
 			self.$el.append(projView.render().el);
 		}, this);
-
+*/
 		console.log(this.el);
 		return this;
 	},

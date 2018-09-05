@@ -1,0 +1,20 @@
+
+//define(["lib/jquery", "lib/underscore", "lib/backbone", "models/task"], function ($, _, Backbone, Task) {
+
+require.config({
+	paths: {
+		"jquery": "lib/jquery", 
+		"underscore": "lib/underscore", 
+		"backbone": "lib/backbone"
+	}
+});
+
+console.log('requirejsTest.js loaded');		
+
+require(['views/testView', 'models/task'], function(TestView, Task) {
+	new TestView;
+});
+
+//	console.log(Task);
+//});
+

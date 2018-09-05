@@ -1,0 +1,7 @@
+
+//define(["lib/jquery", "lib/underscore", "lib/backbone", "models/task"], function ($, _, Backbone, Task) {
+	
+	console.log('requirejsTest.js loaded');		
+//	console.log(Task);
+//});
+

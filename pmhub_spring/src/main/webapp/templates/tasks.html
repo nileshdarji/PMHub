@@ -14,10 +14,16 @@
 		<div class='tasks'></div>
 		
         <script type="text/template" id="taskTemplate">
-			<TD><%= name %></TD> 
-			<TD><button class="btn btn-warning edit">Edit</button> <button class="btn btn-danger delete"> Delete</button></TD>
+			<TD><span class="name"><%= name %></span></TD> 
+			<TD>
+				<button class="btn btn-sm btn-warning edit-task">Edit</button>
+				<button class="btn btn-sm btn-danger delete-task"> Delete</button>
+				<button class="btn btn-sm btn-success update-task" style="display:none"> update</button>
+				<button class="btn btn-sm btn-danger cancel-task" style="display:none"> Cancel</button>
+			</TD>
 		</script> 
    		
+		
         <script type="text/template" id="addTaskTemplate">
 			<form id="addTask" action="">
 				<input id="newTask" type="text" placeholder="Your new task">
