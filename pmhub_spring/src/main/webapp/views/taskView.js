@@ -1,12 +1,11 @@
-define([
-  'models/task'
-], function (Task) {
+//---------------------------------------------------------------------------------
+define(['models/task', 'text!templates/taskList.html'], function (Task, TaskListTemplate) {
 	
-	//---------------------------------------------------------------------------------
 	var TaskView = Backbone.View.extend({
 		
 		tagName: 'tr',
-		template: _.template($('#taskTemplate').html()),
+//		template: _.template($('#taskTemplate').html()),
+		template: _.template(TaskListTemplate),
 		
 		initialize: function() {
 			this.model.on('change', this.render, this);
@@ -28,7 +27,6 @@ define([
 	
 			var name = this.$('.name').html();		
 			this.$('.name').html('<input type="text" class="form-control name-update" value="' + name + '">');
-			
 		},
 	
 		updateTask: function() {
@@ -57,10 +55,11 @@ define([
 			var task = new Task({id: this.model.get('id')});
 			
 			var self = this;
-			task.destroy({
+//			task.destroy({
+			self.model.destroy({
 				success: function() {
 					console.log('Task deleted');				
-					self.model.destroy();
+					//self.model.destroy();
 				},
 				error: function() {
 					console.log('Failed to delete task');				

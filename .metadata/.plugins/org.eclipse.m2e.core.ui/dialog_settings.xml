@@ -4,11 +4,15 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.myapp"/>
+			<item value="ImageApp"/>
 			<item value="com.pmhub"/>
 		</list>
 		<list key="name">
+			<item value="ImageApp"/>
 		</list>
 		<list key="artifactId">
+			<item value="ImageApp"/>
 			<item value="pmhub_spring"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -38,17 +42,33 @@
 		<item value="168" key="y"/>
 		<item value="838" key="height"/>
 	</section>
-	<section name="MavenProjectWizardArchetypePage">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\PMHub\spring-backbone-spa"/>
+		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
 			<item value="[artifactId]-[version]"/>
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
 		</list>
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\PMHub\ImageApp"/>
 			<item value="C:\PMHub\pmhub_spring"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -72,6 +92,7 @@
 			<item value="[artifactId]-[version]"/>
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>

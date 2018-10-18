@@ -11,7 +11,7 @@ var Team = Backbone.Model.extend({
 
 //---------------------------------------------------------------------------------
 // Backbone Collection
-var Teams = Backbone.Collection.extend({url: 'http://localhost:8080/teams'});
+var Teams = Backbone.Collection.extend({url: 'http://localhost:8082/teams'});
 
 //var teams = new Teams([team1, team2]);
 var teams = new Teams();

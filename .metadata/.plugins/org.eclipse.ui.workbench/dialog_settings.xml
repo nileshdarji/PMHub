@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="82" key="DIALOG_Y_ORIGIN"/>
-		<item value="454" key="DIALOG_X_ORIGIN"/>
+		<item value="326" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="736" key="dialogHeight"/>
@@ -19,5 +19,9 @@
 	<section name="NewWizardAction">
 	</section>
 	<section name="ImportExportAction">
+		<item value="org.eclipse.m2e.core.wizards.Maven2ImportWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.m2e"/>
+		</list>
 	</section>
 </section>

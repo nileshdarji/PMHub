@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pmhub.dao.Task;
+import com.pmhub.dao.HibernateUtil;
 
 @RestController
 @RequestMapping("/api")
@@ -26,7 +27,7 @@ public class TaskController {
 	@RequestMapping(value = "/tasks/", method = RequestMethod.GET)
 	public List<Task> getAllTasks() {
 
-        Session session = getSessionFactory2().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         @SuppressWarnings("unchecked")
         List<Task> tasks = session.createQuery("FROM Task").list();
         session.close();
@@ -42,7 +43,7 @@ public class TaskController {
         System.out.println("IN createTask");
         System.out.println(task.toString());
 		
-        Session session = getSessionFactory2().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
                 
         session.save(task);
@@ -57,7 +58,7 @@ public class TaskController {
 	@RequestMapping(value = "/tasks/{id}", method = RequestMethod.GET)
 	public Task getTask(@PathVariable("id") int id) {
 
-        Session session = getSessionFactory2().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
         Task task = session.get(Task.class,id);
         tx.commit();        
@@ -73,7 +74,7 @@ public class TaskController {
         System.out.println("IN updateTask");
         System.out.println(task.toString());
 		
-        Session session = getSessionFactory2().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
 
         Task task2 = session.get(Task.class,id);
@@ -93,7 +94,7 @@ public class TaskController {
 
         System.out.println("IN deleteTask");
 		
-        Session session = getSessionFactory2().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
 
         Task task = session.get(Task.class,id);
@@ -105,14 +106,5 @@ public class TaskController {
         System.out.println("Task Deleted: " + task.toString());
         return task;
 	}
-	
-    public static SessionFactory getSessionFactory2() {
-    	
-        Configuration configuration = new Configuration().configure("hibernate/hibernate.cfg.xml");
-        configuration.addAnnotatedClass(Task.class);
-        SessionFactory sessionFactory = configuration.buildSessionFactory();
-        
-        return sessionFactory;
-    }
 }
 

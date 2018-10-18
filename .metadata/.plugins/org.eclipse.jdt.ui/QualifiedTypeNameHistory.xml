@@ -25,4 +25,24 @@
 <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
 <fullyQualifiedTypeName name="org.slf4j.Logger"/>
 <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
+<fullyQualifiedTypeName name="javax.persistence.Query"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="org.hibernate.validator.constraints.Email"/>
+<fullyQualifiedTypeName name="org.hibernate.validator.constraints.Length"/>
+<fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
+<fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
+<fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="com.pmhub.model.User"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+<fullyQualifiedTypeName name="com.pmhub.repository.RoleRepository"/>
+<fullyQualifiedTypeName name="com.pmhub.repository.UserRepository"/>
+<fullyQualifiedTypeName name="com.pmhub.model.Role"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="com.pmhub.service.UserService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 </qualifiedTypeNameHistroy>

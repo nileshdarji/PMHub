@@ -1,8 +1,5 @@
 //---------------------------------------------------------------------------------
-define([
-  'models/task',
-  'views/taskView'
-], function (TaskList, TaskListView) {
+define(['models/task','views/taskView'], function (TaskList, TaskView) {
 	
 	var TaskListView = Backbone.View.extend({
 		
@@ -23,4 +20,6 @@ define([
 			return this;
 		}	
 	});
+	
+	return TaskListView;
 });

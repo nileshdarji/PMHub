@@ -1,30 +1,24 @@
-
 //---------------------------------------------------------------------------------
 // Backbone Model
-var Project = Backbone.Model.extend({
-	defaults: {
-		id: '',
-		name: '',
-		description: ''
-	},
-	validate: function(attrs) {
-		if ( attrs.id < 0 ) {
-			return 'ID must be positive';
+//---------------------------------------------------------------------------------
+
+define(['backbone'], function (Backbone) {
+
+	var Project = Backbone.Model.extend({
+		urlRoot: 'http://localhost:8082/api/projects/',
+		
+		validate: function(attrs) {
+			if ( !attrs.name ) {
+				return 'Project must have a name';
+			}
+		},
+		
+		testFunction: function() {
+			return "Hello " + this.get("name");
 		}
-		if ( !attrs.name ) {
-			return 'Project must have a name';
-		}
-	},
-	urlRoot : 'http://localhost:8080/api/projects/',
-	testFunction: function() {
-		return "Hello " + this.get("name");
-	}
+	});
+
+	return Project;
 });
 
-//---------------------------------------------------------------------------------
-// Backbone Collection
-var ProjectList = Backbone.Collection.extend({
-	model: Project,
-	url: 'http://localhost:8080/api/projects/'
-});
 
