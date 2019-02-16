@@ -12,6 +12,7 @@ console.log('app.js loaded');
 
 require(['routers/router'], function(MyRouter) {
 	
+	console.log('In MyRouter');		
 	var router = new MyRouter();
 	Backbone.history.start();	
 

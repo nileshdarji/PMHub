@@ -22,13 +22,7 @@ public class MemberConroller {
 
 	@RequestMapping(value = "/members/", method = RequestMethod.GET)
 	public List<Member> getAllMembers() {
-		
-/*		return Arrays.asList(
-				new Member(1, "Nilesh Darji", "nilesh.darji@gmail.com"),
-				new Member(2, "Kris G", "kris@homeunion.com"),
-				new Member(2, "Karthik", "karthik@homeunion.com")				
-		); */
-		
+				
         Session session = HibernateUtil.getSessionFactory().openSession();
         @SuppressWarnings("unchecked")
         List<Member> members = session.createQuery("FROM Member").list();
@@ -36,7 +30,6 @@ public class MemberConroller {
         System.out.println("Found " + members.size() + " members");
         return members;		
 	}
-
 
 	// Add single member
 	@RequestMapping(value = "/members/", method = RequestMethod.POST)

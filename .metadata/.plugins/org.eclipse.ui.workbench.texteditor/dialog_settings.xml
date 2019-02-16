@@ -8,13 +8,13 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="project"/>
 			<item value="home"/>
 			<item value="task"/>
 			<item value="Task"/>
 			<item value="headerTemplate"/>
 			<item value="AddTaskTemplate"/>
 			<item value="projectsView"/>
-			<item value="project"/>
 		</list>
 		<list key="replacehistory">
 			<item value="project"/>

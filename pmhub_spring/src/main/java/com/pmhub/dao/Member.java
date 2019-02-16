@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.util.Date;
 
 @Entity
 @Table(name = "tbl_members")
@@ -27,6 +30,23 @@ public class Member {
 
 	@Column(name="password")
 	private String password;
+
+	@Column(name = "isdeleted", columnDefinition="SMALLINT")
+	private int isDeleted;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="date_created")
+	private Date dateCreated;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="date_modified")
+	private Date dateModified;
+
+	@Column(name = "created_by", columnDefinition="String")
+	private int createdBy;
+
+	@Column(name = "modified_by", columnDefinition="String")
+	private int modifiedBy;
 	
 	public Member() {
 		
@@ -80,4 +100,52 @@ public class Member {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public int getIsDeleted() {
+		return isDeleted;
+	}
+
+	public void setIsDeleted(int isDeleted) {
+		this.isDeleted = isDeleted;
+	}
+
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+	public Date getDateModified() {
+		return dateModified;
+	}
+
+	public void setDateModified(Date dateModified) {
+		this.dateModified = dateModified;
+	}
+
+	public int getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(int createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public int getModifiedBy() {
+		return modifiedBy;
+	}
+
+	public void setModifiedBy(int modifiedBy) {
+		this.modifiedBy = modifiedBy;
+	}
+
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", organizationId=" + organizationId + ", name=" + name + ", email=" + email
+				+ ", password=" + password + ", isDeleted=" + isDeleted + ", dateCreated=" + dateCreated
+				+ ", dateModified=" + dateModified + ", createdBy=" + createdBy + ", modifiedBy=" + modifiedBy + "]";
+	}
+	
 }

@@ -1,16 +1,8 @@
 
 define([
-  'collections/projectList',
-  'views/projectListView',
-  'views/addProjectView',
-  'collections/taskList',
-  'views/taskListView',
-  'views/addTaskView',
-  'collections/memberList',
-  'views/memberListView',
-  'views/addMemberView'
-], function (ProjectList, ProjectListView, AddProjectView, TaskList, TaskListView, AddTaskView, 
-			MemberList, MemberListView, AddMemberView) {
+  'collections/photoList',
+  'views/photoListView'
+], function (PhotoList, PhotoListView) {
 	
 	// Backbone Router
 	var MyRouter = Backbone.Router.extend({
@@ -20,26 +12,25 @@ define([
 		},
 		
 		labelimage: function() {
-			$("#headerContainer").text("Team Members");
+			console.log('In labelimage');				
+			
+			$("#headerContainer").text("Label Image");
 			$("#bodyContainer").html("");		
 			$("#taskList").html("");	
 			$("#newTaskDiv").html("");	
 
-			var memberList = new MemberList();
+			var photoList = new PhotoList();
 			
-			memberList.fetch({
+			photoList.fetch({
 				success: function() {
-					console.log('Got all members');				
-					console.log(memberList.toJSON());
+					console.log('Got all photos');				
+					console.log(photoList.toJSON());
 					
-					var memberListView = new MemberListView({collection: memberList});
-					//console.log(memberListView.render().el);
-					$("#taskList").html(memberListView.render().el);
-	
-					var addMember = new AddMemberView({collection: memberList});								
+					var photoListView = new PhotoListView({collection: photoList});
+					$("#bodyContainer").html(photoListView.render().el);	
 				},
 				error: function() {
-					console.log('Failed to get members');				
+					console.log('Failed to get photo');				
 				}
 			});					
 		}
